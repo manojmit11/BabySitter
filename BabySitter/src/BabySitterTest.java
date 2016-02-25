@@ -62,7 +62,11 @@ public class BabySitterTest {
 		assertEquals("12", babySitter.paytotal(21, 22, 22));
 	}
 
-	
+	@Test
+	public void whenStartTimeIsEqualToBedTimeIsEqualToEndTime()
+	{
+		assertEquals(0, babySitter.paytotal(21, 21, 21));
+	}
 
 	
 	

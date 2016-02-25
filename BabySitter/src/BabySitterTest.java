@@ -6,8 +6,9 @@ import org.junit.Test;
 public class BabySitterTest {
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void ifStartTimeisBeforefiveReturnEnterStartTimegreaterThan5pm() {
+		BabySitter babySitter=new BabySitter();
+		assertEquals("EnterStartTimegreaterThan5pm", babySitter.paytotal(16,20,25));
 	}
 
 }

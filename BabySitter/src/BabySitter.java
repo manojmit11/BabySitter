@@ -9,13 +9,19 @@ public class BabySitter {
 	
 	public String paytotal(Integer starttime, Integer bedtime, Integer endtime) {
 		
+		Integer total=0;
 		if (starttime<17)
 		return "EnterStartTimegreaterThan5pm";
 		
 		if(endtime>28)
 		return"EnterEndTimeLessThan4am";
 		
-		return null;
+		total+=beforebedtime( starttime,  bedtime,  endtime);
+		total+=betweenBedtimeAndMidnight( starttime,  bedtime,  endtime);
+		total+=afterMidnight( starttime,  bedtime,  endtime);
+		
+		return total.toString();
+		
 	}
 
 	public int beforebedtime(Integer starttime, Integer bedtime, Integer endtime) {

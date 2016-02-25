@@ -43,7 +43,11 @@ public class BabySitterTest {
 		assertEquals(48,babySitter.afterMidnight(18,20,27));
 	}
 	
-	
+	@Test
+	public void totalPayForTheNight(){
+		
+		assertEquals("104",babySitter.paytotal(18,20,27));
+	}
 	
 	
 

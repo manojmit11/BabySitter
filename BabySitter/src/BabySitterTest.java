@@ -25,6 +25,11 @@ public class BabySitterTest {
 		assertEquals("EnterEndTimeLessThan4am",babySitter.paytotal(19,20,29));
 	}
 	
+	@Test
+	public void shouldGetPaid12dollarsBeforeBedTime(){
+		
+		assertEquals(24,babySitter.beforebedtime(18,20,27));
+	}
 	
 	
 

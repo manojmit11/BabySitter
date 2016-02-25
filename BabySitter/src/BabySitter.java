@@ -30,6 +30,16 @@ public class BabySitter {
 		return 0;
 	}
 
+	public int afterMidnight(Integer starttime, Integer bedtime, Integer endtime) {
+		if((endtime >= 24))
+		{
+			Integer pay=0;
+			pay= (endtime-Math.max(starttime, 24))*16;
+			return pay;
+		}
+		return 0;
+	}
+
 		
 	
 

@@ -8,6 +8,7 @@ public class BabySitterTest {
 
 	BabySitter babySitter;
 	
+	
 	@Before
 	public void setUp(){
 	babySitter=new BabySitter();
@@ -49,7 +50,14 @@ public class BabySitterTest {
 		assertEquals("104",babySitter.paytotal(18,20,27));
 	}
 	
+	@Test
+	public void whenStartTimeAndBedTimeAreSame()
+	{
+		assertEquals("8", babySitter.paytotal(21, 21, 22));
+	}
+
 	
+
 	
 	
 

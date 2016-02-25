@@ -41,22 +41,23 @@ public class BabySitter {
 		
 	}
 
-	public int beforebedtime(Integer starttime, Integer bedtime, Integer endtime) {
+	public int beforebedtime(int start, int bed, int end) {
 		
-		if((starttime <= bedtime) && (starttime <= MIDNIGHT))
+		if((start <= bed) && (start <= MIDNIGHT))
 		{
-			return (Math.min(Math.min(bedtime, MIDNIGHT),endtime)-starttime)*START_TIME_TO_BED_TIME_PAY;
+			return (Math.min(Math.min(bed, MIDNIGHT),end)-start)*START_TIME_TO_BED_TIME_PAY;
 		}
 		return 0;
 	}
 
-	public int betweenBedtimeAndMidnight(Integer starttime, Integer bedtime, Integer endtime) {
-		if((endtime>=bedtime)&&(bedtime<=MIDNIGHT))
-		{
+	public int betweenBedtimeAndMidnight(int start, int bed, int end) {
 		
-		return (Math.min(MIDNIGHT,endtime) - Math.max(starttime,bedtime))*BED_TIME_TO_MIDNIGHT_PAY;
-		}
+		if((MIDNIGHT >= bed) && (end >= bed))
+			return (Math.min(MIDNIGHT,end) - Math.max(start,bed))*BED_TIME_TO_MIDNIGHT_PAY;
+
+
 		return 0;
+
 	}
 
 	public int afterMidnight(Integer starttime, Integer bedtime, Integer endtime) {

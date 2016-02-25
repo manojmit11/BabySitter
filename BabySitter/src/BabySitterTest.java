@@ -10,14 +10,21 @@ public class BabySitterTest {
 	
 	@Before
 	public void setUp(){
-		babySitter=new BabySitter();
+	babySitter=new BabySitter();
 	}
 	
 	@Test
 	public void ifStartTimeisBeforefiveReturnEnterStartTimegreaterThan5pm() {
-		BabySitter babySitter=new BabySitter();
+		
 		assertEquals("EnterStartTimegreaterThan5pm", babySitter.paytotal(16,20,25));
 	}
+	
+	@Test
+	public void ifEndTimeisAfter4amReturnEnterEndTimeLessThan4am(){
+		
+		assertEquals("EnterEndTimeLessThan4am",babySitter.paytotal(19,20,29));
+	}
+	
 	
 	
 

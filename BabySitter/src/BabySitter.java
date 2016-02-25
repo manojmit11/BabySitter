@@ -21,6 +21,15 @@ public class BabySitter {
 		return 0;
 	}
 
+	public int betweenBedtimeAndMidnight(Integer starttime, Integer bedtime, Integer endtime) {
+		if((endtime>=bedtime)&&(bedtime<=24))
+		{
+		
+		return (Math.min(24,endtime) - Math.max(starttime,bedtime))*8;
+		}
+		return 0;
+	}
+
 		
 	
 

@@ -31,6 +31,12 @@ public class BabySitterTest {
 		assertEquals(24,babySitter.beforebedtime(18,20,27));
 	}
 	
+	@Test
+	public void shouldGetPaid8dollarsBetweenBedTimeAndMidNight(){
+		
+		assertEquals(32,babySitter.betweenBedtimeAndMidnight(18,20,27));
+	}
+	
 	
 
 }

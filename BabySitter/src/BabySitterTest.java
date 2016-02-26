@@ -65,10 +65,15 @@ public class BabySitterTest {
 	@Test
 	public void whenStartTimeIsEqualToBedTimeIsEqualToEndTime()
 	{
-		assertEquals(0, babySitter.paytotal(21, 21, 21));
+		assertEquals("0", babySitter.paytotal(21, 21, 21));
 	}
 
-	
+	@Test
+	public void whenAllTimesDifferentAfterMidnight()
+	{
+		assertEquals("32", babySitter.paytotal(1, 2, 3));
+	}
+
 	
 
 }

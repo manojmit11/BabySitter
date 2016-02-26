@@ -10,6 +10,11 @@ public class BabySitter {
 	private static final int BED_TIME_TO_MIDNIGHT_PAY = 8;
 	
 	private static Map<Integer, Integer> mapA;
+	
+	// If someone has entered either start-time , bedtime or end-time after midnight 
+	// as 1am,2am,3am,4am, we need to convert those times 
+	// into 25,27,28.
+	
 	static {
 		mapA = new HashMap<Integer, Integer>();
 		mapA.put(1, 25);
@@ -27,9 +32,12 @@ public class BabySitter {
 
 		
 		Integer total=0;
+		
+		//Checking if the time start-time is after 5am
 		if (starttime<17)
 		return "EnterStartTimegreaterThan5pm";
 		
+		//Checking if the end-time is before 4am
 		if(endtime>28)
 		return"EnterEndTimeLessThan4am";
 		
@@ -41,6 +49,7 @@ public class BabySitter {
 		
 	}
 
+	// Calculating the amount to be paid for start-time to bed-time
 	public int beforebedtime(int start, int bed, int end) {
 		
 		if((start <= bed) && (start <= MIDNIGHT))
@@ -50,6 +59,7 @@ public class BabySitter {
 		return 0;
 	}
 
+	// Calculating the amount to be paid for bed-time to Midnight
 	public int betweenBedtimeAndMidnight(int start, int bed, int end) {
 		
 		if((MIDNIGHT >= bed) && (end >= bed))
@@ -59,7 +69,8 @@ public class BabySitter {
 		return 0;
 
 	}
-
+  
+	//Calculating the amount to be paid for the time from Midnight to End-time
 	public int afterMidnight(Integer starttime, Integer bedtime, Integer endtime) {
 		if((endtime >= MIDNIGHT))
 		{

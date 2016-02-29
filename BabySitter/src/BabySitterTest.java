@@ -17,13 +17,14 @@ public class BabySitterTest {
 	@Test
 	public void ifStartTimeisBeforefiveReturnEnterStartTimegreaterThan5pm() {
 		
-		assertEquals("EnterStartTimegreaterThan5pm", babySitter.paytotal(16,20,25));
+		assertEquals("EnterStartTimegreaterThan5pm", babySitter.paytotal("01/14/2012 14:29:58","01/14/2012 21:29:58","01/14/2012 23:29:58"));
 	}
+	
 	
 	@Test
 	public void ifEndTimeisAfter4amReturnEnterEndTimeLessThan4am(){
 		
-		assertEquals("EnterEndTimeLessThan4am",babySitter.paytotal(19,20,29));
+		assertEquals("EnterEndTimeLessThan4am",babySitter.paytotal("01/14/2012 20:29:58","01/14/2012 21:29:58","01/15/2012 05:29:58"));
 	}
 	
 	@Test
@@ -31,6 +32,7 @@ public class BabySitterTest {
 		
 		assertEquals(24,babySitter.beforebedtime(18,20,27));
 	}
+	
 	
 	@Test
 	public void shouldGetPaid8dollarsBetweenBedTimeAndMidNight(){
@@ -47,31 +49,32 @@ public class BabySitterTest {
 	@Test
 	public void totalPayForTheNight(){
 		
-		assertEquals("104",babySitter.paytotal(18,20,27));
+		assertEquals("104",babySitter.paytotal("01/14/2012 18:00:00","01/14/2012 20:00:00","01/15/2012 03:00:00"));
 	}
+	
 	
 	@Test
 	public void whenStartTimeAndBedTimeAreSame()
 	{
-		assertEquals("8", babySitter.paytotal(21, 21, 22));
+		assertEquals("80", babySitter.paytotal("01/14/2012 20:00:00","01/14/2012 20:00:00","01/15/2012 03:00:00"));
 	}
-
+	
 	@Test
 	public void whenBedTimeAndEndTimeAreSameAnd()
 	{
-		assertEquals("12", babySitter.paytotal(21, 22, 22));
+		assertEquals("24", babySitter.paytotal("01/14/2012 18:00:00","01/14/2012 20:00:00","01/14/2012 20:00:00"));
 	}
-
+	
 	@Test
 	public void whenStartTimeIsEqualToBedTimeIsEqualToEndTime()
 	{
-		assertEquals("0", babySitter.paytotal(21, 21, 21));
+		assertEquals("0", babySitter.paytotal("01/14/2012 20:00:00","01/14/2012 20:00:00","01/14/2012 20:00:00"));
 	}
-
+	
 	@Test
 	public void whenAllTimesDifferentAfterMidnight()
 	{
-		assertEquals("32", babySitter.paytotal(25, 26, 27));
+		assertEquals("32", babySitter.paytotal("01/14/2012 01:00:00","01/14/2012 02:00:00","01/14/2012 03:00:00"));
 	}
 
 	

@@ -71,7 +71,7 @@ public class BabySitterTest {
 	@Test
 	public void whenAllTimesDifferentAfterMidnight()
 	{
-		assertEquals("32", babySitter.paytotal(1, 2, 3));
+		assertEquals("32", babySitter.paytotal(25, 26, 27));
 	}
 
 	

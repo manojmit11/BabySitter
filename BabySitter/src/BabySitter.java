@@ -92,26 +92,21 @@ public class BabySitter {
 	// Calculating the amount to be paid for bed-time to Midnight
 	public int betweenBedtimeAndMidnight(int start, int bed, int end) {
 		
-		if((MIDNIGHT >= bed) && (end >= bed))
-			return (Math.min(MIDNIGHT,end) - Math.max(start,bed))*BED_TIME_TO_MIDNIGHT_PAY;
-
-
+		if((bed <= MIDNIGHT) && (bed <= end)){
+			return (Math.min(MIDNIGHT,end) - bed)*BED_TIME_TO_MIDNIGHT_PAY;
+		}
 		return 0;
-
 	}
   
 	//Calculating the amount to be paid for the time from Midnight to End-time
 	public int afterMidnight(Integer starttime, Integer bedtime, Integer endtime) {
 		if((endtime >= MIDNIGHT))
 		{
-			Integer pay=0;
+			int pay=0;
 			pay= (endtime-Math.max(starttime, MIDNIGHT))*AFTER_MIDNIGHT_PAY;
 			return pay;
 		}
 		return 0;
 	}
-
-		
-	
 
 }
